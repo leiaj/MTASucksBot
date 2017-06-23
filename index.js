@@ -6,8 +6,8 @@ app.listen(process.env.PORT || 5000);
 // END HEROKU SETUP
 
 var Twit = require('twit')
-
-
+var dotenv = require('dotenv')
+dotenv.load()
 
 var T = new Twit({
   consumer_key:         process.env['TWITTER_CONSUMER_KEY'],
