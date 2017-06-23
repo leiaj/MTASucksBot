@@ -6,7 +6,6 @@ app.listen(process.env.PORT || 5000);
 // END HEROKU SETUP
 
 var Twit = require('twit')
-
 var T = new Twit({
   consumer_key:         process.env['TWITTER_CONSUMER_KEY'],
   consumer_secret:      process.env['TWITTER_CONSUMER_SECRET'],
@@ -16,7 +15,7 @@ var T = new Twit({
 })
 
 
-var stream = T.stream('user', {in_reply_to_status_id:'14515129'})
+var stream = T.stream('user', {in_reply_to_status_id:'66379182'})
 var ourTweet = ".@NYGovCuomo FIX THE SUBWAY RT @"
 
 stream.on('message', function (msg) {
@@ -26,7 +25,7 @@ stream.on('message', function (msg) {
 
 
 function mtaTweets(callback){
-  T.get('search/tweets', {q: 'due from:leiaj', count: 1}, function(err, data, response){
+  T.get('search/tweets', {q: 'due from:NYCTSubway', count: 1}, function(err, data, response){
     tweet = {text: data.statuses[0].text, user: data.statuses[0].user.screen_name}
     callback(tweet)
   })
