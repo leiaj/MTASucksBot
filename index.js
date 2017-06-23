@@ -40,7 +40,7 @@ const fixSubway = function(tweet){
   if (finalTweet.length > 140){
     finalTweet = finalTweet.slice(0,140)
   }
-  T.post('statuses/update', {status: `${finalTweet}`})
+  T.post('statuses/update', {status: finalTweet})
   console.log(tweet)
   console.log(finalTweet)
 }
