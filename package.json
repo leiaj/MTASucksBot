@@ -14,7 +14,7 @@
   "dependencies": {
     "tuiter": "~0.2.12",
     "express": "~4.9.0",
-    "twit": "^2.2.9"
+    "twit": "2.2.9"
   },
   "devDependencies": {},
   "optionalDependencies": {},
