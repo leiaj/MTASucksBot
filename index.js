@@ -1,4 +1,12 @@
+// START HEROKU SETUP
+var express = require("express");
+var app = express();
+app.get('/', function(req, res){ res.send('The robot is happily running.'); });
+app.listen(process.env.PORT || 5000);
+// END HEROKU SETUP
+
 var Twit = require('twit')
+
 
 
 var T = new Twit({
@@ -11,7 +19,7 @@ var T = new Twit({
 
 
 var stream = T.stream('user', {in_reply_to_status_id:'14515129'})
-var ourTweet = `.@NYGovCuomo FIX THE SUBWAY RT @`
+var ourTweet = ".@NYGovCuomo FIX THE SUBWAY RT @"
 
 stream.on('message', function (msg) {
   console.log("i'm watching u")
