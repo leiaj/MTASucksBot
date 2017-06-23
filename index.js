@@ -35,8 +35,8 @@ function mtaTweets(callback){
 }
 
 const fixSubway = function(tweet){
-  let firstTweet = tweet.user + " " + tweet.text
-  let finalTweet = `${ourTweet}${firstTweet}`
+  var firstTweet = tweet.user + " " + tweet.text
+  var finalTweet = `${ourTweet}${firstTweet}`
   if (finalTweet.length > 140){
     finalTweet = finalTweet.slice(0,140)
   }
